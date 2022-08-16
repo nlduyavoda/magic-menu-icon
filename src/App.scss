@@ -10,29 +10,29 @@ button{
   width: 50px;
 }
 
-.active .item.top{
+.iconwrapper.active::before{
   animation: effectTop 1s forwards
 }
 .active .item.middle{
   animation: middleEffect 1s forwards
 }
-.active .item.bottom{
+.iconwrapper.active::after{
 transform-origin: center;
   animation: effectBottom 1s forwards;
 }
 
-.inactive .item.top{
+.iconwrapper.inactive::before{
   animation: effectTopInactive 1s forwards
 }
 .inactive .item.middle{
   animation: middleEffectInactive 1s forwards
 }
-.inactive .item.bottom{
+.iconwrapper.inactive::after{
 transform-origin: center;
   animation: effectBottomInactive 1s forwards;
 }
 
-.menu-icon-container {
+.iconwrapper {
   display: flex;
   position: relative;
   height: 100px;
@@ -52,7 +52,15 @@ transform-origin: center;
   display: none;
 }
 
-.top {
+.iconwrapper::before {
+  content:"";
+  position: absolute;
+  left: 0;
+  height: 10%;
+  width: 100%;
+  position: absolute;
+  background-color: black;
+  transition: 3s all;
   top: calc(0%);
 }
 
@@ -61,7 +69,14 @@ transform-origin: center;
   top: 50%;
 }
 
-.bottom {
+.iconwrapper::after {
+  content:"";
+  left: 0;
+  height: 10%;
+  width: 100%;
+  position: absolute;
+  background-color: black;
+  transition: 3s all;
   top: calc(100% - 10%);
 }
 

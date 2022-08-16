@@ -28,12 +28,10 @@ export default function App() {
   return (
     <div className="App">
       <div
-        className="menu-icon-container"
+        className="iconwrapper"
         ref={containerRef}
       >
-        <div className="item top" ></div>
         <div className="item middle" ref={middleItem}></div>
-        <div className="item bottom" ></div>
       </div>
 
       <button onClick={handleToglge}>toggle</button>
